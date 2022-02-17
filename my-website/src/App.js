@@ -1,5 +1,5 @@
 
-export function App() {
+function App() {
   return (
     <div className="App">
       
@@ -7,3 +7,4 @@ export function App() {
   );
 }
 
+export default App;
