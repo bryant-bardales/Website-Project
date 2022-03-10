@@ -1,11 +1,123 @@
-.app {
-  padding: 30px;
-  background-color: floralwhite;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif; /* Sets font for the web app */
 }
 
-.todo {
-  align-items: center;
+body {
+  background: rgb(89, 89, 89); /* Sets background color for the app behind the form itself */
+}
+
+.todo-webapp {  /*Structures the background of the form which is in lightgrey color*/
   display: flex;
-  font-size: 18px;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 520px;
+  min-height: 600px;
+  background: lightgrey;
+  text-align: center;
+  margin: 200px auto;
+  border-radius: 5px;
+  padding-bottom: 20px;
+}
+
+h1 {
+  margin: 25px 0; /* Edits the title of the todo web app*/
+  color: black;
+  font-size: 30px;
+}
+
+.complete {
+  text-decoration: line-through; /* Adds a strikthrough the text on the task/list item when completed/clicked on*/
+  opacity: 0.4;
+}
+
+.listItem-form {
+  margin-bottom: 25px; /* Sets some space between the task/list item and the bottom of the form*/
+}
+
+.listItem-input {
+  padding: 14px 32px 14px 16px; /* Styles the input box for the user to add task/items*/
+  border-radius: 4px 0 0 4px;
+  border: 2px solid blue;
+  outline: none;
+  width: 320px;
+  background: black;
+  color: white;
+}
+
+.listItem-button { /* Styles the Add Task button */
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: blue;
+  color: white;
+  text-transform: capitalize;
+}
+
+.listItem-input.edit { /* When editing, the color changes to red for the input box */
+  border: 2px solid darkred;
+}
+
+.listItem-button.edit { /* When editing, the color changes to red for the button */
+  background: darkred;
+  padding: 16px 22px;
+}
+
+.listItem-container { /* Structures the container/box the form sits on */
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.listItem-row { /* Styles the small box constructed around each task/list item */ 
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: white;
+  background: rgb(9, 111, 0);
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.icons { /* Styles the size of the icons for delete and edit */
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.remove-icon { /* Styles the remove icon */
+  margin-right: 5px;
+  color: white;
+}
+
+.edit-icon { /* Styles the edit icon */
+  color: white;
+}
+
+@media (min-width: 320px) and (max-width: 650px) { /* Styles the application to be mobile friendly */
+  .todo-webapp {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .list-context {
+    width: 100vw;
+  }
+
+  .listItem-input {
+    width: 240px;
+  }
+
+  .listItem-row {
+    width: 80%;
+  }
+
 }
